@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Safae! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            animation: slideIn 0.8s ease-out;
+            margin: 20px auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .emoji {
+            font-size: 2.5em;
+            display: inline-block;
+            margin: 0 10px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+            margin: 30px 0;
+            text-align: left;
+            direction: ltr;
+        }
+
+        .signature {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            pointer-events: none;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .balloon {
+            position: fixed;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 0;
+            opacity: 0.8;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .cake {
+            font-size: 3em;
+            display: inline-block;
+            animation: wobble 1s infinite;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="emoji">🎉</span>
+            Happy Birthday Safae!
+            <span class="emoji">🎂</span>
+        </h1>
+
+        <div class="cake">🎂</div>
+
+        <div class="message">
+            <p><strong>Happy Birthday, Safae! 🎉</strong></p>
+            
+            <p><strong>Hey Safae!</strong></p>
+            
+            <p>On your special day, I wanted to take a moment to tell you how grateful I am to have you as my best friend. You bring so much joy, laughter, and kindness into my life, and I'm truly lucky to know you.</p>
+            
+            <p>Thank you for always being there for me, for the countless memories we've shared, and for being the amazing person you are. Here's to celebrating you today and making many more beautiful memories together!</p>
+            
+            <p>Wishing you a day filled with happiness, love, and all the things that make you smile.</p>
+            
+            <p><strong>Happy Birthday! 🎂✨</strong></p>
+        </div>
+
+        <div class="signature">
+            With all my heart,<br>
+            <span style="color: #667eea;">Mouad</span>
+        </div>
+    </div>
+
+    <script>
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.background = ['#667eea', '#764ba2', '#FF6B6B', '#FFD93D', '#6BCB77'][Math.floor(Math.random() * 5)];
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 3000);
+        }
+
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.background = ['#FF6B6B', '#FFD93D', '#6BCB77', '#667eea', '#764ba2'][Math.floor(Math.random() * 5)];
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            balloon.style.bottom = '-60px';
+            document.body.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 5000);
+        }
+
+        setInterval(createConfetti, 300);
+        setInterval(createBalloon, 500);
+
+        window.addEventListener('load', () => {
+            console.log('🎉 صفحة عيد ميلاد Safae جاهزة!');
+        });
+    </script>
+</body>
+</html>
